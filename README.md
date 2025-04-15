@@ -1,4 +1,4 @@
-HEAD
+
 # PostgreSQL-DBA-Playground
 
 # 🧰 PostgreSQL DBA Portfolio Project
