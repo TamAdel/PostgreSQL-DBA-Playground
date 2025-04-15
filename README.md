@@ -119,4 +119,3 @@ Once this local PostgreSQL DBA project is complete, move to:
 2. Legacy project migration to Azure
 3. Unified portfolio structure
 
-b32001f (Phase 1: PostgreSQL setup script and dev journal)
