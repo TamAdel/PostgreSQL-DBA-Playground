@@ -1,4 +1,3 @@
-```conf
 #-----------------------------------------------
 # EXAMPLE pg_hba.conf for dev & lab environments
 # Author: Tamer (dev journal)
@@ -22,9 +21,10 @@ host    all             all             203.0.113.5/32          md5
 
 # 6️⃣ Block everything else (optional hard stop)
 #host    all             all             0.0.0.0/0               reject
-```
+
+
 > 💡 *Copy this file to `/etc/postgresql/14/main/pg_hba.conf` (back up the original first) and reload PostgreSQL with `sudo systemctl reload postgresql`.*
-```conf
+
 # Local trusted access (for testing only)
 local   all             postgres                                trust
 
@@ -33,4 +33,3 @@ host    all             all             192.168.1.0/24          md5
 
 # Allow access from specific external IP
 host    all             all             203.0.113.5/32          md5
-```
