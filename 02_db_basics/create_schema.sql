@@ -1,5 +1,4 @@
-####🗄️ `02_db_basics/create_schema.sql`
-```sql
+
 -- Create a dedicated schema for geo data
 CREATE SCHEMA IF NOT EXISTS geo AUTHORIZATION postgres;
 
@@ -17,5 +16,5 @@ CREATE TABLE IF NOT EXISTS geo.poi (
 
 -- Simple B‑tree index on category for quick filters
 CREATE INDEX IF NOT EXISTS idx_poi_category ON geo.poi(category);
-```
-> _Inline note: I kept this table minimal; I’ll evolve it once PostGIS is enabled._
+
+-- Inline note: I kept this table minimal; I’ll evolve it once PostGIS is enabled.
