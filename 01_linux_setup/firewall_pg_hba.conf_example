@@ -1,0 +1,36 @@
+```conf
+#-----------------------------------------------
+# EXAMPLE pg_hba.conf for dev & lab environments
+# Author: Tamer (dev journal)
+#-----------------------------------------------
+# TYPE  DATABASE        USER            ADDRESS                 METHOD
+
+# 1️⃣ Local trusted access for the superuser postgres
+local   all             postgres                                trust
+
+# 2️⃣ Local IPv4 connections from any user with MD5 password
+host    all             all             127.0.0.1/32            md5
+
+# 3️⃣ Local IPv6 connections
+host    all             all             ::1/128                 md5
+
+# 4️⃣ LAN access (home / office subnet)
+host    all             all             192.168.1.0/24          md5   # replace with your subnet
+
+# 5️⃣ Specific external IP (e.g., Azure VM or colleague)
+host    all             all             203.0.113.5/32          md5
+
+# 6️⃣ Block everything else (optional hard stop)
+#host    all             all             0.0.0.0/0               reject
+```
+> 💡 *Copy this file to `/etc/postgresql/14/main/pg_hba.conf` (back up the original first) and reload PostgreSQL with `sudo systemctl reload postgresql`.*
+```conf
+# Local trusted access (for testing only)
+local   all             postgres                                trust
+
+# Allow all users from local network with password
+host    all             all             192.168.1.0/24          md5
+
+# Allow access from specific external IP
+host    all             all             203.0.113.5/32          md5
+```
